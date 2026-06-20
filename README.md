@@ -1,6 +1,18 @@
-Instalasi Ubuntu Proot + Node.js + 9router + OpenCode di Termux
+🚀 Instalasi Ubuntu Proot + Node.js + 9router + OpenCode di Termux
 
-1. Persiapan Termux
+Panduan lengkap untuk menjalankan Ubuntu Proot, Node.js, 9router, dan OpenCode di Android menggunakan Termux.
+
+---
+
+📋 Prasyarat
+
+- Termux terbaru
+- Koneksi internet stabil
+- Ruang penyimpanan minimal 5 GB
+
+---
+
+1️⃣ Persiapan Termux
 
 Update package Termux:
 
@@ -12,7 +24,7 @@ pkg install proot-distro curl wget git -y
 
 ---
 
-2. Install Ubuntu dengan Proot-Distro
+2️⃣ Install Ubuntu dengan Proot-Distro
 
 Install Ubuntu:
 
@@ -32,9 +44,11 @@ PRETTY_NAME="Ubuntu 24.04 LTS"
 
 ---
 
-3. Update Ubuntu
+3️⃣ Update Ubuntu
 
-Karena kita sudah login sebagai root, tidak perlu menggunakan sudo.
+Karena kita sudah login sebagai root, tidak perlu menggunakan "sudo".
+
+Update package Ubuntu:
 
 apt update && apt upgrade -y
 
@@ -44,9 +58,9 @@ apt install curl wget git build-essential ca-certificates -y
 
 ---
 
-4. Install Node.js dari NodeSource
+4️⃣ Install Node.js dari NodeSource
 
-Jangan gunakan Node.js dan npm bawaan repository Ubuntu jika mengalami masalah dependency. Gunakan NodeSource.
+«⚠️ Disarankan menggunakan Node.js dari NodeSource agar terhindar dari masalah dependency pada paket bawaan Ubuntu.»
 
 Tambahkan repository NodeSource:
 
@@ -68,7 +82,7 @@ v22.x.x
 
 ---
 
-5. Install 9router
+5️⃣ Install 9router
 
 Install secara global:
 
@@ -80,7 +94,7 @@ Verifikasi:
 
 ---
 
-6. Install OpenCode
+6️⃣ Install OpenCode
 
 Install secara global:
 
@@ -92,9 +106,16 @@ opencode --help
 
 ---
 
-7. Menyimpan Project di Storage Android
+7️⃣ Menyimpan Project di Storage Android
 
-Agar project dapat diakses dari ZArchiver, Acode, VS Code Android, atau file manager lainnya, gunakan folder Documents Android.
+Agar project dapat diakses dari:
+
+- ZArchiver
+- Acode
+- VS Code Android
+- File Manager Android
+
+gunakan folder Documents Android.
 
 Masuk ke folder Documents:
 
@@ -115,7 +136,7 @@ git clone https://github.com/user/repo.git
 
 ---
 
-8. Cara Masuk Kembali ke Ubuntu
+8️⃣ Cara Masuk Kembali ke Ubuntu
 
 Dari Termux:
 
@@ -123,15 +144,15 @@ proot-distro login ubuntu
 
 ---
 
-9. Cara Keluar dari Ubuntu
+9️⃣ Cara Keluar dari Ubuntu
 
 exit
 
 ---
 
-10. Troubleshooting
+🔧 Troubleshooting
 
-npm error atau dependency rusak
+npm Error atau Dependency Rusak
 
 Hapus Node.js bawaan Ubuntu:
 
@@ -142,9 +163,9 @@ Kemudian ulangi langkah instalasi NodeSource.
 
 ---
 
-Tidak bisa akses file dari ZArchiver
+Tidak Bisa Akses File dari ZArchiver
 
-Gunakan folder:
+Gunakan salah satu lokasi berikut untuk menyimpan source code dan project:
 
 /sdcard/Documents
 
@@ -152,13 +173,19 @@ atau
 
 ~/storage/documents
 
-untuk menyimpan source code dan project.
+«⚠️ Jangan memindahkan seluruh filesystem Ubuntu ke Documents.
 
-Jangan memindahkan seluruh filesystem Ubuntu ke Documents karena filesystem Android tidak mendukung seluruh fitur Linux seperti symlink dan permission yang dibutuhkan Ubuntu.
+Filesystem Android tidak mendukung seluruh fitur Linux seperti:
+
+- Symbolic Link (symlink)
+- Permission Linux
+- Device Files
+
+yang dibutuhkan oleh Ubuntu Proot.»
 
 ---
 
-Ringkasan Instalasi Cepat
+⚡ Ringkasan Instalasi Cepat
 
 pkg update && pkg upgrade -y
 pkg install proot-distro curl wget git -y
@@ -174,3 +201,17 @@ apt install nodejs -y
 
 npm install -g 9router
 npm install -g opencode-ai
+
+---
+
+✅ Selesai
+
+Sekarang Ubuntu Proot telah siap digunakan dengan:
+
+- Ubuntu Proot
+- Node.js
+- npm
+- 9router
+- OpenCode
+
+Selamat ngoding di Android! 🎉
